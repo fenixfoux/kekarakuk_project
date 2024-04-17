@@ -20,6 +20,7 @@ class PageTest(ft.UserControl):
 
     def append_content_in_section(self):
         # TRIED METHOD 1
+        self.test_section.controls.append(ft.Text('three buttons using first methodology of pass data to another page'))
         for element in self.pers_list:
             self.test_section.controls.append(
                 ft.ElevatedButton(
@@ -31,6 +32,7 @@ class PageTest(ft.UserControl):
                     on_click=lambda ev: self.test_func_1(ev),
                 ),
             )
+        self.test_section.controls.append(ft.Text('one button using second methodology of pass data to another page'))
         # TRIED METHOD 2
         # another button and method but also i can't pass into new page anything, trying firstly to associate data to
         # a self.associated_data and later use that to fill ft.Text value
