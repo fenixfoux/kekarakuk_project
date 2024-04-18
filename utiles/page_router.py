@@ -3,6 +3,7 @@ import flet as ft
 from pages.home_page import HomePage as main_h
 from pages.test.test_page import PageTest as p_tests
 
+
 def page_route_change_handler(page):
     page_home = main_h().main()
     page_tests = p_tests().content_page
@@ -34,5 +35,3 @@ def page_route_change_handler(page):
         pages[page.route]
     )
     page.update()
-
-

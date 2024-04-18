@@ -54,6 +54,7 @@ class PageTest(ft.UserControl):
         print(self.pers_content_page.controls)  # here I see that controls was added successfully
 
         change_route(event)
+        return self.pers_content_page
 
     # TRIED METHOD 2 FUNCTIONS
     def associate_data(self, event):
