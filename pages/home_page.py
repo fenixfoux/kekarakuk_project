@@ -1,37 +1,20 @@
 import flet as ft
+from utiles.all_variables import all_persons as persons
 
-
-def change_route(e: ft.RouteChangeEvent):
-    e.page.route = e.control.key
-    e.page.update()
-
-
-class HomePage(ft.UserControl):
+class HomePage:
     def __init__(self):
-        super().__init__()
-        pass
+        self.name = 'home page'
+        self.content_page = ft.Column()
 
-    def main(self):
-        content_page = ft.Column(
-            controls=[
-                ft.Text('home page'),
+    def create_content_page(self):
+        self.content_page.controls.append(ft.Text(f"This is home page"))
+        for person in persons["eng"]:
+            self.content_page.controls.append(
                 ft.ElevatedButton(
-                    key='/page_tests',
-                    text='go to page test',
-                    on_click=lambda ev: change_route(ev)
-                ),
-                ft.ElevatedButton(
-                    key='/page_1',
-                    text='not implemented yet',
-                    on_click=lambda ev: change_route(ev),
-                    disabled=True
-                ),
-                ft.ElevatedButton(
-                    key='/page_2',
-                    text='not implemented yet',
-                    on_click=lambda ev: change_route(ev),
-                    disabled=True
-                ),
-            ]
-        )
-        return content_page
+                    text=f"Go to {person['name']}'s page",
+                    on_click=lambda ev, pers_id=person['id']: self.go_to_person_page(ev, pers_id)
+                ))
+        return self.content_page
+
+    def go_to_person_page(self, event, person_id):
+        event.page.go(f'/pers_page/{person_id}')

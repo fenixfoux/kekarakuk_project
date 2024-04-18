@@ -1,18 +1,22 @@
-all_pers = {
+all_persons = {
     'eng': [
         {
-            'name': 'john',
-            'lvl': 25
+            'id': 34253,
+            'name': 'ignis',
+            'age': 51,
+            'description': "some personage details"
         },
         {
-            'name': 'katryn',
-            'lvl': 31
+            'id': 234534,
+            'name': 'argent',
+            'age': 42,
+            'description': "some personage details"
         },
         {
-            'name': 'leather',
-            'lvl': 27
+            'id': 5435,
+            'name': 'katty',
+            'age': 37,
+            'description': "some personage details"
         },
     ]
 }
-
-# print(all_pers)

@@ -1,6 +1,6 @@
 import flet as ft
 
-from utiles.page_router import page_route_change_handler
+from pages.pages_router import page_route_change_handler
 
 
 def main(one_page: ft.Page):
